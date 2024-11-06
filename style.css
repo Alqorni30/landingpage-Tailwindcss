@@ -1,0 +1,50 @@
+/* Navbar */
+.nav {
+    position: relative;
+}
+
+/* Hamburger Styles */
+#hamburger {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Menu styling untuk mode mobile */
+#menu {
+    transition: transform 0.3s ease-in-out;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(82, 41, 188);
+    transform: translateY(100%);
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 1rem 0;
+    display: none;
+    z-index: 10;
+}
+
+#menu.show {
+    transform: translateY(0);
+    display: flex;
+}
+
+/* Responsiveness */
+@media (min-width: 768px) {
+    #hamburger {
+        display: none;
+    }
+    #menu {
+        display: flex;
+        width: auto;
+        height: auto;
+        position: static;
+        transform: translateY(0);
+        background-color: transparent;
+        flex-direction: row;
+        padding: 0;
+    }
+}
